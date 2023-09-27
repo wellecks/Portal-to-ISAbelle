@@ -58,7 +58,7 @@ class PisaEnv:
             print(e)
         return f"Starting is successful: {self.successful_starting}"
 
-    @func_set_timeout(1800, allowOverride=True)
+    @func_set_timeout(18000, allowOverride=True)
     def step(self, old_name, step, new_name, delete_old_state=True) -> str:
         '''
         :param old_name: the name of the old state
@@ -190,7 +190,7 @@ class PisaEnv:
         message = f"<accumulative_step_through_a_theorem>"
         return self.post(message)
 
-    @func_set_timeout(1800, allowOverride=True)
+    @func_set_timeout(18000, allowOverride=True)
     def step_to_top_level_state(self, action, tls_name, new_name):
         # last_obs_string = self.stub.IsabelleCommand(server_pb2.IsaCommand(command=f"<get state> {tls_name}")).state
         obs_string = "Step error"
